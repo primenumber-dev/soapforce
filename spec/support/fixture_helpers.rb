@@ -32,8 +32,9 @@ envelope = <<EOF
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xmlns:tns="urn:partner.soap.sforce.com"
  xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
- xmlns:ins0="urn:sobject.partner.soap.sforce.com"
- xmlns:ins1="urn:fault.partner.soap.sforce.com">
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:fns="urn:fault.partner.soap.sforce.com"
+ xmlns:ens="urn:sobject.partner.soap.sforce.com">
 #{soap_headers(headers)}
 <env:Body>#{body}</env:Body>
 </env:Envelope>
