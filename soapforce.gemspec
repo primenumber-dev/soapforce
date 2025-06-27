@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "savon", ">= 2.3.0", '< 3.0.0'
-  spec.add_runtime_dependency "nori", "2.6.0"
 
   spec.add_development_dependency 'rspec', '>= 2.14.0', '< 4.0.0'
   spec.add_development_dependency 'webmock', '>=2.3.2'

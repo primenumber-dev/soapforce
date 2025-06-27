@@ -38,7 +38,7 @@ module Soapforce
         @response_tags = lambda { |key| key }
       else
         @tag_style = :snakecase
-        @response_tags = lambda { |key| key.snakecase.to_sym }
+        @response_tags = lambda { |key| ::Soapforce::StringUtils.snakecase(key).to_sym }
       end
 
       # Override optional Savon attributes
@@ -586,7 +586,7 @@ module Soapforce
 
     def key_name(key)
       if @tag_style == :snakecase
-        key.is_a?(Symbol) ? key : key.snakecase.to_sym
+        key.is_a?(Symbol) ? key : ::Soapforce::StringUtils.snakecase(key).to_sym
       else
         if key.to_s.include?('_')
           camel_key = key.to_s.gsub(/\_(\w{1})/) {|cap| cap[1].upcase }
