@@ -52,7 +52,7 @@ module Soapforce
       end
 
       if string_method =~ /[A-Z+]/
-        string_method = string_method.snakecase
+        string_method = ::Soapforce::StringUtils.snakecase(string_method)
       end
 
       index = string_method.downcase.to_sym

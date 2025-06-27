@@ -28,7 +28,7 @@ module Soapforce
         elsif @raw_hash.key?(index.to_sym)
           @raw_hash[index.to_sym]
         else
-          @raw_hash[index.snakecase.to_sym]
+          @raw_hash[::Soapforce::StringUtils.snakecase(index).to_sym]
         end
       end
     end

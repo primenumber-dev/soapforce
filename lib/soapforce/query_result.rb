@@ -61,7 +61,7 @@ module Soapforce
 
     def key_name(key)
       if @key_type == :symbol
-        key.is_a?(String) ? key.snakecase.to_sym : key
+        key.is_a?(String) ? ::Soapforce::StringUtils.snakecase(key).to_sym : key
       else
         key.to_s
       end
